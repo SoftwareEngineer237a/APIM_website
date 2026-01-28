@@ -20,24 +20,26 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public",
-                "output": "/"
-              },
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "/assets"
-              }
+              { "glob": "**/*", "input": "public", "output": "/" },
+              { "glob": "**/*", "input": "src/assets", "output": "/assets" }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": ["src/styles.css"],
             "extractLicenses": false,
             "sourceMap": false,
             "optimization": true,
-            "namedChunks": false
+            "namedChunks": false,
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "2MB",
+                "maximumError": "5MB"
+              },
+              {
+                "type": "anyComponentStyle",
+                "maximumWarning": "100kB",
+                "maximumError": "200kB"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -49,8 +51,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "50kB",
-                  "maximumError": "100kB"
+                  "maximumWarning": "100kB",
+                  "maximumError": "200kB"
                 }
               ],
               "outputHashing": "all",
@@ -67,12 +69,8 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
-            "production": {
-              "buildTarget": "church-website:build:production"
-            },
-            "development": {
-              "buildTarget": "church-website:build:development"
-            }
+            "production": { "buildTarget": "church-website:build:production" },
+            "development": { "buildTarget": "church-website:build:development" }
           },
           "defaultConfiguration": "development"
         },

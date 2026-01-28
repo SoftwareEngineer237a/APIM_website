@@ -2,12 +2,12 @@
   "name": "church-website",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --configuration production",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:church-website": "node dist/church-website/server/server.mjs"
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build --configuration production",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test",
+  "serve:ssr:church-website": "node dist/church-website/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,
