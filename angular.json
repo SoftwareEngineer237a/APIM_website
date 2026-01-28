@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-      "church-website": {
+    "church-website": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -33,7 +33,11 @@
             ],
             "styles": [
               "src/styles.css"
-            ]
+            ],
+            "extractLicenses": false,
+            "sourceMap": false,
+            "optimization": true,
+            "namedChunks": false
           },
           "configurations": {
             "production": {
@@ -45,20 +49,12 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "40kB",
+                  "maximumWarning": "50kB",
                   "maximumError": "100kB"
                 }
               ],
-              "outputHashing": "all"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular/build:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "church-website:build:production"
+              "outputHashing": "all",
+              "optimization": true
             },
             "development": {
               "optimization": false,
