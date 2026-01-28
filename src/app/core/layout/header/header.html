@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a routerLink="/">
+        <img src="/assets/images/logo.png" alt="Church Logo">
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" [class.open]="isMenuOpen">
+      <ul>
+        <li *ngFor="let link of navLinks">
+          <a [routerLink]="link.path">{{link.label}}</a>
+        </li>
+      </ul>
+    </nav>
+
+
+    <!-- Hamburger for mobile -->
+    <button class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

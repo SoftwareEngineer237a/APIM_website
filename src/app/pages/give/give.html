@@ -1,0 +1,52 @@
+<section class="give-hero">
+  <div class="container">
+    <h1>Dons et Soutien</h1>
+    <p>
+      Votre générosité nous aide à accomplir notre mission apostolique et prophétique
+      pour impacter les cités et les nations.
+    </p>
+  </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="give-intro">
+  <div class="container">
+    <p>
+      Le don est un acte de foi, d'amour et d'intendance. À APIM,
+      chaque contribution est traitée avec intégrité et dirigée vers l'
+      avancement de l'œuvre de Dieu par un impact spirituel, social et communautaire.
+    </p>
+  </div>
+</section>
+
+<!-- GIVING METHODS -->
+<section class="give-methods">
+  <div class="container">
+    <h2>Moyens de Donner</h2>
+
+    <div class="methods-grid">
+      <div class="method-card" *ngFor="let contact of givingContacts">
+        <img [src]="contact.icon" alt="{{contact.method}}">
+        <h3>{{contact.method}}</h3>
+        <p class="number">
+          <a [href]="contact.link">{{contact.number}}</a>
+        </p>
+        <p class="name">{{contact.name}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGNATIONS -->
+<section class="give-designations">
+  <div class="container">
+    <h2>Désignations des Dons</h2>
+    <ul>
+      <li *ngFor="let item of givingDesignations">
+        <img [src]="item.image" [alt]="item.name">
+        {{item.name}}
+      </li>
+    </ul>
+  </div>
+</section>
+

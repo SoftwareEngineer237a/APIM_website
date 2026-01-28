@@ -1,0 +1,48 @@
+<!-- HERO -->
+<section class="gallery-hero">
+  <div class="container">
+    <h1>Galerie</h1>
+    <p>
+      Découvrez la vie de l'église à travers des moments d'adoration, de communion et d'impact.
+    </p>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<section class="gallery-filters">
+  <div class="container">
+    <button
+      *ngFor="let cat of categories"
+      (click)="filter(cat)"
+      [class.active]="cat === activeCategory">
+      {{ cat }}
+    </button>
+  </div>
+</section>
+
+<!-- GRID -->
+<section class="gallery-grid-section">
+  <div class="container gallery-grid">
+    <div
+      class="gallery-item"
+      *ngFor="let img of filteredImages"
+      (click)="openLightbox(img)">
+
+      <img
+        [src]="img.src"
+        [alt]="img.caption" />
+
+      <div class="overlay">
+        <span>{{ img.caption }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" *ngIf="lightboxImage" (click)="closeLightbox()">
+  <div class="lightbox-content">
+    <img [src]="lightboxImage.src" [alt]="lightboxImage.caption">
+    <p>{{ lightboxImage.caption }}</p>
+  </div>
+</div>

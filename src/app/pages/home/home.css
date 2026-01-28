@@ -1,0 +1,715 @@
+/* ============================================
+   MODERN CHURCH WEBSITE STYLES
+   Color Scheme: Blue, White, Gold
+   ============================================ */
+
+/* ============================================
+   GLOBAL STYLES & RESET
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(25, 47, 89, 0.92) 0%, rgba(13, 71, 161, 0.85) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #ffffff;
+  animation: fadeInUp 1s ease-out;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to right, #ffffff, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero h2 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 300;
+  margin-bottom: 40px;
+  color: #e3f2fd;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.cta-buttons button {
+  padding: 18px 45px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-buttons button:first-child {
+  background: linear-gradient(135deg, #d4af37 0%, #f6e05e 100%);
+  color: #1a237e;
+}
+
+.cta-buttons button:last-child {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #d4af37;
+}
+
+.cta-buttons button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease;
+}
+
+.cta-buttons button:hover::before {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.cta-buttons button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+}
+
+.cta-buttons button:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ============================================
+   FOUNDER SECTION
+   ============================================ */
+.founder {
+  background: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 100%);
+  padding: 100px 0;
+  position: relative;
+}
+
+.founder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #0d47a1, #d4af37, #0d47a1);
+}
+
+.founder-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: center;
+  animation: fadeIn 1s ease-out;
+}
+
+.founder-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(13, 71, 161, 0.3);
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.founder-image:hover {
+  transform: scale(1.03) rotate(-1deg);
+}
+
+.founder-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(13, 71, 161, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+  transition: opacity 0.5s ease;
+}
+
+.founder-image:hover::after {
+  opacity: 0;
+}
+
+.founder-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.founder-info h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #0d47a1;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.founder-info h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #0d47a1, #d4af37);
+  border-radius: 2px;
+}
+
+.founder-info p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #424242;
+  margin-bottom: 20px;
+  text-align: justify;
+  position: relative;
+  padding-left: 20px;
+}
+
+.founder-info p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 20px;
+  background: #d4af37;
+  border-radius: 2px;
+}
+
+.founder-info p:hover {
+  color: #0d47a1;
+}
+
+/* ============================================
+   VISION & MISSION SECTION
+   ============================================ */
+.vision-mission {
+  background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+  padding: 100px 0;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-mission .container {
+  position: relative;
+  z-index: 1;
+}
+
+.vision-mission h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.vision-mission > .container > p {
+  font-size: 1.3rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  line-height: 1.8;
+  color: #e3f2fd;
+  font-weight: 300;
+  padding: 0 20px;
+}
+
+.branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  list-style: none;
+  margin-top: 50px;
+}
+
+.branches li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.branches li:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #d4af37;
+}
+
+.branches li img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  object-fit: contain;
+  filter: brightness(1);
+}
+
+.branches li:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px #d4af37);
+}
+
+.branches li span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ============================================
+   SERVICE TIMES SECTION
+   ============================================ */
+.service-times {
+  background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+  padding: 100px 0;
+  position: relative;
+}
+
+.service-times::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #d4af37, #0d47a1, #d4af37);
+}
+
+.service-times h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.service-times h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #0d47a1, #d4af37);
+  border-radius: 2px;
+}
+
+.service-times ul {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 25px;
+}
+
+.service-times li {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  padding: 30px 40px;
+  border-radius: 15px;
+  border-left: 5px solid #d4af37;
+  box-shadow: 0 10px 30px rgba(13, 71, 161, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.15rem;
+  color: #424242;
+  line-height: 1.6;
+  will-change: transform;
+}
+
+.service-times li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0d47a1, #d4af37);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s ease;
+}
+
+.service-times li:hover::before {
+  transform: scaleY(1);
+}
+
+.service-times li:hover {
+  transform: translateX(10px);
+  box-shadow: 0 15px 45px rgba(13, 71, 161, 0.2);
+  background: #ffffff;
+}
+
+.service-times li strong {
+  color: #0d47a1;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* ============================================
+   ABOUT CHURCH SECTION
+   ============================================ */
+.about-church {
+  background: linear-gradient(135deg, #0d47a1 0%, #1a237e 100%);
+  padding: 100px 0;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-church::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.about-church::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  right: -150px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border-radius: 50%;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+}
+
+.about-info h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.about-info h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #d4af37, #ffffff);
+  border-radius: 2px;
+}
+
+.about-info p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #e3f2fd;
+  margin-bottom: 25px;
+  text-align: justify;
+  font-weight: 300;
+  position: relative;
+  padding-left: 25px;
+}
+
+.about-info p::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #d4af37;
+  font-size: 1.5rem;
+  line-height: 1.9rem;
+}
+
+.about-info p:hover {
+  color: #ffffff;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1024px) {
+  .founder-container,
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .founder-image,
+  .about-image {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .branches {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.3rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-buttons button {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .founder,
+  .vision-mission,
+  .service-times,
+  .about-church {
+    padding: 60px 0;
+  }
+
+  .founder-info p,
+  .about-info p {
+    text-align: left;
+  }
+
+  .branches {
+    grid-template-columns: 1fr;
+  }
+
+  .service-times li {
+    padding: 20px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .hero h2 {
+    font-size: 1.1rem;
+  }
+
+  .cta-buttons button {
+    padding: 15px 35px;
+    font-size: 1rem;
+  }
+
+  .founder-info h2,
+  .about-info h2 {
+    font-size: 1.8rem;
+  }
+
+  .vision-mission h2,
+  .service-times h2 {
+    font-size: 2rem;
+  }
+
+  .service-times li strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #d4af37;
+  outline-offset: 3px;
+}

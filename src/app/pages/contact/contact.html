@@ -1,0 +1,77 @@
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="container">
+    <h1>Nous Contacter</h1>
+    <p>
+      Nous sommes ici pour vous accueillir et répondre à vos questions.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT DETAILS -->
+<section class="contact-details">
+  <div class="container grid">
+
+    <!-- ADDRESS -->
+    <div class="contact-card">
+      <h2>Adresse de l'Église</h2>
+      <p>{{ address }}</p>
+    </div>
+
+    <!-- PHONES -->
+    <div class="contact-card">
+      <h2>Numéros de Téléphone</h2>
+      <ul>
+        <li *ngFor="let phone of phoneNumbers">
+          <a [href]="'tel:' + phone">{{ phone }}</a>
+        </li>
+      </ul>
+      <p class="note">
+        Disponible par appel ou WhatsApp.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section">
+  <div class="container">
+    <h2>Carte de Localisation</h2>
+
+    <div class="map-wrapper">
+      <img
+        src="/assets/images/maps/church-location2.png"
+        alt="Carte de localisation de l'église"
+      >
+      <img
+        src="/assets/images/maps/church-location.png"
+        alt="Carte de localisation de l'église"
+      >
+    </div>
+
+    <p class="map-note">
+      Image de la carte affichée à titre d'orientation. 
+    </p>
+  </div>
+</section>
+
+<!-- DIRECTIONS & PARKING -->
+<section class="parking">
+  <div class="container">
+    <h2>Directions et Stationnement</h2>
+
+    <p>
+      L'église est située à Awae Maison Rouge, directement en face de l'École Privée NDEMA.
+      La zone est facilement accessible en voiture et en transports publics.
+    </p>
+
+    <div class="parking-box">
+      <h3>Informations de Stationnement</h3>
+      <p>
+        Un grand et sécurisé parking est disponible autour des locaux de l'église,
+        permettant un accès facile pour tous les visiteurs.
+      </p>
+    </div>
+  </div>
+</section>

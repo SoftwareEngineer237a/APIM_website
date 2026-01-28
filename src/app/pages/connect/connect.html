@@ -1,0 +1,62 @@
+<section class="connect-hero">
+  <div class="container">
+    <h1>Se Connecter à Notre Communauté</h1>
+    <p>
+      Devenez membre de ce que Dieu fait à travers notre ministère et notre vision.
+    </p>
+  </div>
+</section>
+
+<!-- ACTIVE MINISTRIES -->
+<section class="ministries">
+  <div class="container">
+    <h2>Ministères Actifs</h2>
+
+    <div class="ministries-grid">
+      <div class="ministry-card" *ngFor="let ministry of activeMinistries">
+        <img [src]="ministry.image" [alt]="ministry.name">
+        <div class="ministry-content">
+          <h3>{{ ministry.name }}</h3>
+          <p>{{ ministry.description }}</p>
+
+          <a *ngIf="ministry.facebook"
+             [href]="ministry.facebook"
+             target="_blank"
+             rel="noopener"
+             class="facebook-link">
+            Visiter la Page Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION PROJECTS -->
+<section class="vision-projects">
+  <div class="container">
+    <h2>Projets de Vision</h2>
+    <p class="vision-note">
+      Ces projets font partie de notre vision prophétique et sont en préparation.
+    </p>
+
+    <ul class="vision-list">
+      <li *ngFor="let project of visionProjects">
+        <span class="vision-badge">Vision</span>
+        {{ project }}
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- PRAYER REQUEST -->
+<section class="prayer">
+  <div class="container">
+    <h2>Prière et Soutien</h2>
+    <p>
+      Si vous avez besoin de prière ou de soutien spirituel, vous êtes invité à nous visiter pendant nos services.
+      Nos équipes de pastoral et de prière sont toujours disponibles pour vous soutenir.
+    </p>
+  </div>
+</section>
+

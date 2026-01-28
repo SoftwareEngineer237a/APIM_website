@@ -1,0 +1,76 @@
+<!-- HERO SECTION -->
+<section class="hero" [style.backgroundImage]="'url(/assets/images/church-hero.jpg)'">
+  <div class="hero-overlay">
+    <div class="container hero-content">
+      <h1>{{churchName}}</h1>
+      
+      <h2>Sous le leadership du {{founderName}}</h2>
+      <div class="cta-buttons">
+        <button routerLink="/give">Donner</button>
+        <button routerLink="/connect">Se Connecter</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER SECTION -->
+<section class="founder">
+  <div class="container founder-container">
+    <div class="founder-image">
+      <img src="/assets/images/founder.jpg" alt="{{founderName}}">
+    </div>
+    <div class="founder-info">
+      <h2>À propos du Fondateur</h2>
+      <p>{{founderBio1}}</p>
+      <p>{{founderBio2}}</p>
+      <p>{{founderBio3}}</p>
+    </div>
+  </div>
+</section>
+
+<!-- VISION / MISSION SECTION -->
+<section class="vision-mission">
+  <div class="container">
+    <h2>Vision et Mission</h2>
+    <p>
+      Mission APIM: Suciter et stimuler une génération au capacités transformatrices pour les cités et les nations.
+    </p>
+
+    <ul class="branches">
+      <li *ngFor="let branch of visionBranches">
+        <img [src]="branch.logo" alt="{{branch.name}}">
+        <span>{{branch.name}}</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- SERVICE TIMES -->
+<section class="service-times">
+  <div class="container">
+    <h2>Horaires des Services</h2>
+    <ul>
+      <li *ngFor="let service of serviceTimes">
+        <strong>{{service.day}} {{service.time}}:</strong> {{service.event}}
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ABOUT CHURCH -->
+<section class="about-church">
+  <div class="container about-container">
+    <div class="about-image">
+      <img src="/assets/images/logo.png" alt="Church">
+    </div>
+    <div class="about-info">
+      <h2>À propos de l'Église</h2>
+      <p>
+        A.P.I.M. est un ministère dédiée à la croissance spirituelle, à la foi et à l'impact à travers les nations.
+      </p>
+      <p>
+        Nos branches, programmes et ministères se concentrent sur l'éducation, les médias, la santé et le développement communautaire.
+      </p>
+    </div>
+  </div>
+</section>

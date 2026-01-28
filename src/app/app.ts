@@ -1,12 +1,21 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+// Import your layout components
+import { Header } from './core/layout/header/header';
+import { Footer } from './core/layout/footer/footer';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [
+    RouterOutlet, 
+    Header, 
+    Footer
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('church-website');
+  title = 'church-website';
 }

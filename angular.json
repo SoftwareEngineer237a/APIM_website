@@ -2,11 +2,12 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "3c58e38d-19af-4c1b-bfbb-7787c6a0b68f"
   },
   "newProjectRoot": "projects",
   "projects": {
-    "church-website": {
+      "church-website": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -21,17 +22,18 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
               }
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {

@@ -1,0 +1,584 @@
+/* ============================================
+   CONNECT PAGE STYLES - Modern Blue & White Theme
+   ============================================ */
+
+/* === ROOT VARIABLES === */
+:root {
+  --primary-blue: #0d47a1;
+  --deep-blue: #1a237e;
+  --accent-gold: #d4af37;
+  --light-blue: #e3f2fd;
+  --white: #ffffff;
+  --off-white: #f5f5f5;
+  --gray-50: #fafafa;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(13, 71, 161, 0.1), 0 2px 4px -1px rgba(13, 71, 161, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(13, 71, 161, 0.15), 0 4px 6px -2px rgba(13, 71, 161, 0.05);
+}
+
+/* === GLOBAL CONTAINER === */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.connect-hero {
+  position: relative;
+  background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1a237e 100%);
+  padding: 8rem 0 6rem;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.connect-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.connect-hero .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.connect-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--white);
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.connect-hero p {
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* ============================================
+   ACTIVE MINISTRIES SECTION
+   ============================================ */
+.ministries {
+  padding: 3rem 0 0 0;
+  background: var(--off-white);
+}
+
+.ministries h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  text-align: center;
+  margin: 0 0 4rem;
+  position: relative;
+  padding-bottom: 1.25rem;
+}
+
+.ministries h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--sky-blue));
+  border-radius: 2px;
+}
+
+.ministries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.ministry-card {
+  background: var(--white);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.ministry-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-blue), #1565c0);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.ministry-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(13, 71, 161, 0.2);
+}
+
+.ministry-card:hover::before {
+  transform: scaleX(1);
+}
+
+.ministry-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.ministry-card:hover img {
+  opacity: 0.95;
+}
+
+.ministry-content {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ministry-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin: 0 0 1rem;
+  line-height: 1.3;
+}
+
+.ministry-content p {
+  font-size: 1.05rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin: 0 0 1.5rem;
+  flex: 1;
+}
+
+.facebook-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: linear-gradient(135deg, var(--primary-blue), #1565c0);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  align-self: flex-start;
+}
+
+.facebook-link::before {
+  content: '→';
+  font-size: 1.2rem;
+}
+
+.facebook-link:hover {
+  background: linear-gradient(135deg, var(--deep-blue), var(--primary-blue));
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   VISION PROJECTS SECTION
+   ============================================ */
+.vision-projects {
+  padding: 1rem 0;
+  background: linear-gradient(to bottom, var(--white), var(--gray-50));
+}
+
+.vision-projects h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  text-align: center;
+  margin: 0 0 1.5rem;
+  position: relative;
+  padding-bottom: 1.25rem;
+}
+
+.vision-projects h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--sky-blue));
+  border-radius: 2px;
+}
+
+.vision-note {
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--gray-600);
+  font-style: italic;
+  margin: 0 0 3.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vision-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.vision-list li {
+  background: rgb(221, 220, 220);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--gray-800);
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(13, 71, 161, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  border-left: 5px solid var(--primary-blue);
+}
+
+.vision-list li span {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.vision-list li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
+  display: none;
+}
+
+.vision-list li::after {
+  content: '✦';
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: var(--accent-gold);
+  opacity: 0.5;
+}
+
+.vision-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(13, 71, 161, 0.15);
+}
+
+.vision-list li:hover::after {
+  opacity: 0.8;
+}
+
+.vision-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.25rem;
+  background: linear-gradient(135deg, var(--primary-blue), #1565c0);
+  color: var(--white);
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  align-self: flex-start;
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  display: none;
+}
+
+.vision-list li:hover .vision-badge::before {
+  display: none;
+}
+
+/* ============================================
+   PRAYER SECTION
+   ============================================ */
+.prayer {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--deep-blue) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.prayer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.prayer .container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  text-align: center;
+}
+
+.prayer h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 2rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prayer p {
+  font-size: 1.2rem;
+  color: rgba(81, 71, 71, 0.95);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Large Tablets & Small Desktops */
+@media (max-width: 1024px) {
+  .connect-hero h1 {
+    font-size: 3rem;
+  }
+
+  .connect-hero p {
+    font-size: 1.2rem;
+  }
+
+  .ministries h2,
+  .vision-projects h2,
+  .prayer h2,
+  .contact-info h2 {
+    font-size: 2.25rem;
+  }
+
+  .ministries-grid {
+    gap: 2rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .connect-hero {
+    padding: 6rem 0 4rem;
+  }
+
+  .connect-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .connect-hero p {
+    font-size: 1.1rem;
+  }
+
+  .ministries,
+  .vision-projects,
+  .prayer,
+  .contact-info {
+    padding: 4rem 0;
+  }
+
+  .ministries h2,
+  .vision-projects h2,
+  .prayer h2,
+  .contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .ministries-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .ministry-card img {
+    height: 240px;
+  }
+
+  .vision-list {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .connect-hero {
+    padding: 4rem 0 3rem;
+  }
+
+  .connect-hero h1 {
+    font-size: 2rem;
+  }
+
+  .connect-hero p {
+    font-size: 1rem;
+  }
+
+  .ministries,
+  .vision-projects,
+  .prayer,
+  .contact-info {
+    padding: 3rem 0;
+  }
+
+  .ministries h2,
+  .vision-projects h2,
+  .prayer h2,
+  .contact-info h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .ministry-content {
+    padding: 1.5rem;
+  }
+
+  .ministry-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .ministry-content p {
+    font-size: 1rem;
+  }
+
+  .ministry-card img {
+    height: 200px;
+  }
+
+  .vision-list li {
+    padding: 1.5rem 1.5rem;
+    font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .facebook-link {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .prayer p,
+  .contact-info p {
+    font-size: 1.05rem;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+  .connect-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .ministries h2,
+  .vision-projects h2,
+  .prayer h2,
+  .contact-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .ministry-card img {
+    height: 180px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .ministry-card,
+  .vision-list li {
+    border: 2px solid var(--primary-blue);
+  }
+}
+
+/* Focus Visible for Keyboard Navigation */
+.facebook-link:focus-visible {
+  outline: 3px solid var(--sky-blue);
+  outline-offset: 3px;
+}
