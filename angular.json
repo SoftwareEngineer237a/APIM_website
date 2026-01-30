@@ -24,7 +24,7 @@
               { "glob": "**/*", "input": "src/assets", "output": "/assets" }
             ],
             "styles": ["src/styles.css"],
-            "extractLicenses": false,
+            "extractLicenses": false, 
             "sourceMap": false,
             "optimization": true,
             "namedChunks": false,
@@ -36,8 +36,8 @@
               },
               {
                 "type": "anyComponentStyle",
-                "maximumWarning": "100kB",
-                "maximumError": "200kB"
+                "maximumWarning": "15kB",
+                "maximumError": "25kB"
               }
             ]
           },
